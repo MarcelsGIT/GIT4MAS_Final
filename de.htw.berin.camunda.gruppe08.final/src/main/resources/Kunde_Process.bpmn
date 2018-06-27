@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.14.0">
   <bpmn:collaboration id="customer_process">
     <bpmn:participant id="Participant_05q2s47" name="Kunde" processRef="customer_accept_process" />
     <bpmn:participant id="Participant_05azwkx" name="System" />
@@ -22,19 +22,27 @@
     <bpmn:userTask id="Task_0eleuzi" name="Bewerbung annehmen">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="Haustier" type="enum" />
-          <camunda:formField id="Haltungsart" type="enum" />
-          <camunda:formField id="Futter" type="enum">
+          <camunda:formField id="Haustier" type="string">
             <camunda:validation>
               <camunda:constraint name="readonly" config="true" />
             </camunda:validation>
           </camunda:formField>
-          <camunda:formField id="andereTiere" type="enum">
+          <camunda:formField id="Haltungsart" type="string">
             <camunda:validation>
               <camunda:constraint name="readonly" config="true" />
             </camunda:validation>
           </camunda:formField>
-          <camunda:formField id="Vorname_Sitter" type="boolean">
+          <camunda:formField id="Futter" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="andereTiere" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="Vorname_Sitter" type="string">
             <camunda:validation>
               <camunda:constraint name="readonly" config="true" />
             </camunda:validation>
@@ -118,30 +126,30 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0f3bq5q_di" bpmnElement="SequenceFlow_0f3bq5q">
-        <di:waypoint xsi:type="dc:Point" x="204" y="267" />
-        <di:waypoint xsi:type="dc:Point" x="236" y="267" />
+        <di:waypoint x="204" y="267" />
+        <di:waypoint x="236" y="267" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="175" y="246" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1071o7g_di" bpmnElement="SequenceFlow_1071o7g">
-        <di:waypoint xsi:type="dc:Point" x="478" y="267" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="267" />
+        <di:waypoint x="478" y="267" />
+        <di:waypoint x="532" y="267" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="460" y="246" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0r47qtu_di" bpmnElement="SequenceFlow_0r47qtu">
-        <di:waypoint xsi:type="dc:Point" x="336" y="267" />
-        <di:waypoint xsi:type="dc:Point" x="378" y="267" />
+        <di:waypoint x="336" y="267" />
+        <di:waypoint x="378" y="267" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="312" y="246" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0llcqjh_di" bpmnElement="SequenceFlow_0llcqjh">
-        <di:waypoint xsi:type="dc:Point" x="336" y="325" />
-        <di:waypoint xsi:type="dc:Point" x="336" y="366" />
-        <di:waypoint xsi:type="dc:Point" x="532" y="366" />
+        <di:waypoint x="336" y="325" />
+        <di:waypoint x="336" y="366" />
+        <di:waypoint x="532" y="366" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="306" y="339.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
@@ -150,8 +158,8 @@
         <dc:Bounds x="118" y="691" width="1192" height="250" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="MessageFlow_1skdj3z_di" bpmnElement="MessageFlow_1skdj3z">
-        <di:waypoint xsi:type="dc:Point" x="428" y="307" />
-        <di:waypoint xsi:type="dc:Point" x="428" y="691" />
+        <di:waypoint x="428" y="307" />
+        <di:waypoint x="428" y="691" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="398" y="493" width="90" height="12" />
         </bpmndi:BPMNLabel>
@@ -166,8 +174,8 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_01ibfth_di" bpmnElement="SequenceFlow_01ibfth">
-        <di:waypoint xsi:type="dc:Point" x="970" y="473" />
-        <di:waypoint xsi:type="dc:Point" x="1164" y="472" />
+        <di:waypoint x="970" y="473" />
+        <di:waypoint x="1164" y="472" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1022" y="451.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
@@ -176,8 +184,8 @@
         <dc:Bounds x="1172.1802507836992" y="245" width="99.99999880417013" height="123.8244514106583" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0n8z2u7_di" bpmnElement="Association_0n8z2u7">
-        <di:waypoint xsi:type="dc:Point" x="1160" y="379" />
-        <di:waypoint xsi:type="dc:Point" x="1172" y="365" />
+        <di:waypoint x="1160" y="379" />
+        <di:waypoint x="1172" y="365" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="StartEvent_0rtt3e3_di" bpmnElement="StartEvent_1c69ess">
         <dc:Bounds x="934" y="455" width="36" height="36" />
